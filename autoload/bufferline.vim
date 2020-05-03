@@ -20,6 +20,7 @@ function! s:generate_names()
         let fname = pathshorten(fname)
       endif
       let fname = substitute(fname, "%", "%%", "g")
+      let fname = substitute(fname, '/.*\ze\/.*\//', "", "g")
 
       let skip = 0
       for ex in g:bufferline_excludes
